@@ -31,7 +31,7 @@ const LogMeal = () => {
     if (user) {
       fetchCalorieData(); // Fetch calorie data when the user is logged in
     }
-  }, [user]);
+  }, [user, fetchCalorieData]);
 
   const handleCalorieAdd = (calorieEstimate) => {
     setCalorieData((prevData) => [
