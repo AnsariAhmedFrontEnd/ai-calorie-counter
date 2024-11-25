@@ -1,0 +1,46 @@
+/* Navbar styling to match the UI */
+.custom-navbar {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb); /* Matching gradient */
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .navbar-brand:hover {
+    color: #ddd;
+    text-decoration: none;
+  }
+  
+  /* Nav links */
+  .nav-link {
+    color: #fff;
+    font-size: 1rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #d1d1f5;
+  }
+  
+  /* Sign-up button styled link */
+  .signup-btn {
+    background: #fff;
+    color: #4e54c8;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .signup-btn:hover {
+    background: #f5f5ff;
+    color: #3b40b6;
+  }
+  

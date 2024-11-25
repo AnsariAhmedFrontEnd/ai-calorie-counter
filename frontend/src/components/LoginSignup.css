@@ -1,0 +1,73 @@
+/* Background gradient */
+.auth-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* Card styling */
+  .auth-card {
+    width: 400px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+  }
+  
+  /* Title */
+  .auth-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #4e54c8;
+  }
+  
+  /* Form controls */
+  .form-label {
+    font-weight: 500;
+    color: #4e54c8;
+  }
+  
+  .form-control {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  /* Button styling */
+  .auth-btn {
+    width: 100%;
+    background: #4e54c8;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .auth-btn:hover {
+    background: #3b40b6;
+  }
+  
+  /* Toggle text */
+  .toggle-text {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .toggle-link {
+    color: #4e54c8;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .toggle-link:hover {
+    text-decoration: underline;
+  }
+  
