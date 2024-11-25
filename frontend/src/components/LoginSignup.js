@@ -11,8 +11,8 @@ const LoginSignup = ({ onLogin }) => {
     e.preventDefault();
     try {
       const endpoint = isLogin
-        ? "http://localhost:5000/api/auth/login"
-        : "http://localhost:5000/api/auth/register";
+        ? "https://ai-calorie-counter.onrender.com/api/auth/login"
+        : "https://ai-calorie-counter.onrender.com/auth/register";
 
       const response = await axios.post(endpoint, formData);
 

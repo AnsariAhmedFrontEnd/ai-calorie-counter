@@ -12,7 +12,7 @@ const AddSteps = () => {
     try {
       const token = localStorage.getItem('token'); // Retrieve the token from local storage
       const res = await axios.post(
-        'http://localhost:5000/api/steps/add',
+        'https://ai-calorie-counter.onrender.com/api/steps/add',
         { steps, date },
         { headers: { Authorization: `Bearer ${token}` } }
       );

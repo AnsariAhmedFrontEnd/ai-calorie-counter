@@ -10,7 +10,7 @@ const AddCalories = ({ onCalorieAdd }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/meal/calories",
+        "https://ai-calorie-counter.onrender.com/api/meal/calories",
         { mealInput }
       );
       const calorieEstimate = response.data.data;

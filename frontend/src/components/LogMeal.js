@@ -14,7 +14,7 @@ const LogMeal = () => {
     }
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/meal/get-calories",
+        "https://ai-calorie-counter.onrender.com/api/meal/get-calories",
         {
           headers: {
             Authorization: `Bearer ${user.token}`,

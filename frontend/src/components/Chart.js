@@ -10,7 +10,7 @@ const ViewSteps = () => {
       const token = localStorage.getItem('token');
 
       try {
-        const res = await axios.get('http://localhost:5000/api/steps/all', {
+        const res = await axios.get('https://ai-calorie-counter.onrender.com/api/steps/all', {
           headers: { Authorization: token }
         });
         setStepsData(res.data);
