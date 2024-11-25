@@ -1,37 +1,34 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useUser } from "../authContext";
-import AddCalories from "./AddCalories"; // Import the AddCalories component
-import CalorieChart from "./CalorieChart"; // Import the CalorieChart component
+import AddCalories from "./AddCalories";
+import CalorieChart from "./CalorieChart";
 
 const LogMeal = () => {
-  const { user } = useUser(); // Get user from context
-  const [calorieData, setCalorieData] = useState([]); // To hold calorie data from the API
-
-  const fetchCalorieData = async () => {
-    if (!user) {
-      return;
-    }
-    try {
-      const response = await axios.get(
-        "https://ai-calorie-counter.onrender.com/api/meal/get-calories",
-        {
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        }
-      );
-      setCalorieData(response.data.data); // Set fetched calorie data
-    } catch (err) {
-      console.error("Failed to fetch calorie data.", err);
-    }
-  };
+  const { user } = useUser();
+  const [calorieData, setCalorieData] = useState([]);
 
   useEffect(() => {
-    if (user) {
-      fetchCalorieData(); // Fetch calorie data when the user is logged in
-    }
-  }, [user, fetchCalorieData]);
+    const fetchCalorieData = async () => {
+      if (!user) return;
+
+      try {
+        const response = await axios.get(
+          "https://ai-calorie-counter.onrender.com/api/meal/get-calories",
+          {
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+          }
+        );
+        setCalorieData(response.data.data);
+      } catch (err) {
+        console.error("Failed to fetch calorie data.", err);
+      }
+    };
+
+    fetchCalorieData(); // Call the function inside useEffect
+  }, [user]); // Only re-run if user changes
 
   const handleCalorieAdd = (calorieEstimate) => {
     setCalorieData((prevData) => [
@@ -46,12 +43,10 @@ const LogMeal = () => {
   return (
     <div className="row p-5">
       <div className="col-6">
-        <AddCalories onCalorieAdd={handleCalorieAdd} />{" "}
-        {/* Pass handler to AddCalories */}
+        <AddCalories onCalorieAdd={handleCalorieAdd} />
       </div>
       <div className="col-6">
-        <CalorieChart calorieData={calorieData} />{" "}
-        {/* Pass calorieData to the chart */}
+        <CalorieChart calorieData={calorieData} />
       </div>
     </div>
   );
